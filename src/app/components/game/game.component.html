@@ -1,0 +1,38 @@
+<div class="container top-50">
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <p><b> Player1</b></p>
+      <ul>
+        <li *ngFor="let card of player1Cards">
+          <img src="assets/img/{{card}}" alt="">
+        </li>
+      </ul>
+      <hr> 
+      <b>{{player1Combination}}</b>
+    </div>
+
+    <div class="col-md-4 text-center">
+
+      <hr>
+      <h1>{{winner}}</h1>
+      <br><br>
+      <button (click)="deal()" type="button" [disabled]="isDisabledDeal()" >Deal new cards</button>
+      <hr>
+      <button (click)="shuffle()" type="button">Shuffle Deck</button>
+      <br>
+      <b>{{errorMessage}}</b>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <p><b>Player2</b></p>
+      <ul>
+        <li *ngFor="let card of player2Cards">
+          <img src="assets/img/{{card}}" alt="">
+        </li>
+      </ul>
+      <hr> 
+      <b>{{player2Combination}}</b>
+    </div>
+
+  </div>
+</div>
