@@ -14,7 +14,7 @@ function getStraight(numbers) {
     var strOrder = pokerUtils.order.toString();
     return strOrder.indexOf(strnumber) != -1 ? numbers[4] : false;
 }
-
+//return the power and the card if flush,straight or both
 function getFiveCombo(flush, straight) {
     if (flush && straight) {
         if (flush == 'A') {
@@ -29,19 +29,20 @@ function getFiveCombo(flush, straight) {
         return [5, straight]
     }
 }
-
+//count each freequency card and returned in json
 function getHandCount(numbers) {
     var counts = {};
     numbers.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
     return counts;
 }
-
+//return if found some combo involucres a repeated card(pair, two pairs, three of a kind, full house, poker)
 function getRepeatedCardCombos(handCount) {
     let nPair = 0;
     let pair = [];
     let nThree = 0;
     let three;
     console.log(handCount);
+    //check handcount for cards repeateds
     for (var key in handCount) {
         if (handCount.hasOwnProperty(key)) {
             var val = handCount[key];

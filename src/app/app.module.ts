@@ -6,10 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
 import { GameComponent } from './components/game/game.component';
 
-import { PostsService } from './posts.service';
 import { DealerService } from './services/dealer.service';
 
 // Define the routes
@@ -20,10 +18,6 @@ const ROUTES = [
     pathMatch: 'full'
   },
   {
-    path: 'posts',
-    component: PostsComponent
-  },
-  {
     path: 'game',
     component: GameComponent
   }
@@ -32,7 +26,6 @@ const ROUTES = [
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent,
     GameComponent
   ],
   imports: [
@@ -41,7 +34,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES) // Add routes to the app
   ],
-  providers: [PostsService,DealerService],
+  providers: [DealerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
